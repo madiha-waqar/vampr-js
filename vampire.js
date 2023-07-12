@@ -27,18 +27,18 @@ class Vampire {
   get numberOfVampiresFromOriginal() {
     let vampiresFromOriginal = 0;
     let currentVampire = this;
-  
+
     while (currentVampire.creator) {
       vampiresFromOriginal++;
       currentVampire = currentVampire.creator;
     }
-  
+
     return vampiresFromOriginal;
   }
 
   // Returns true if this vampire is more senior than the other vampire. (Who is closer to the original vampire)
   isMoreSeniorThan(vampire) {
-
+    return this.numberOfVampiresFromOriginal < vampire.numberOfVampiresFromOriginal;
   }
 
   /** Stretch **/

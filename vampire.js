@@ -16,7 +16,11 @@ class Vampire {
 
   // Returns the total number of vampires created by that vampire
   get numberOfOffspring() {
-
+    let count = this.offspring.length;
+    this.offspring.forEach((child) => {
+      count += child.numberOfOffspring;
+    });
+    return count;
   }
 
   // Returns the number of vampires away from the original vampire this vampire is
